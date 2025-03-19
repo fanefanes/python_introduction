@@ -227,8 +227,6 @@ $$
 """
 分段函数求值
 
-Version: 1.0
-Author: 骆昊
 """
 x = float(input('x = '))
 if x > 1:

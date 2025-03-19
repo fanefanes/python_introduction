@@ -24,7 +24,7 @@ class Suite(Enum):
 
 ```Python
 for suite in Suite:
-    print(f'{suite}: {suite.value}')
+    print(f'{suite}: {suite.value}')  # 输出花色和对应的数值
 ```
 
 接下来我们可以定义牌类。
@@ -37,7 +37,7 @@ class Card:
         self.suite = suite
         self.face = face
 
-    def __repr__(self):
+    def __rear__(self):
         suites = '♠♥♣♦'
         faces = ['', 'A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
         return f'{suites[self.suite.value]}{faces[self.face]}'  # 返回牌的花色和点数
@@ -62,9 +62,7 @@ class Poker:
     """扑克"""
 
     def __init__(self):
-        self.cards = [Card(suite, face) 
-                      for suite in Suite
-                      for face in range(1, 14)]  # 52张牌构成的列表
+        self.cards = [Card(suite, face) for suite in Suite for face in range(1, 14)]  # 52张牌构成的列表
         self.current = 0  # 记录发牌位置的属性
 
     def shuffle(self):
@@ -143,11 +141,11 @@ class Card:
         self.suite = suite
         self.face = face
 
-    def __repr__(self):
+    def __rear__(self):
         suites = '♠♥♣♦'
         faces = ['', 'A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']
         return f'{suites[self.suite.value]}{faces[self.face]}'
-    
+
     def __lt__(self, other):
         if self.suite == other.suite:
             return self.face < other.face   # 花色相同比较点数的大小

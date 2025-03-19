@@ -60,10 +60,7 @@ def record_time(func):
 
 ```Python
 import time
-
-
 def record_time(func):
-
     def wrapper(*args, **kwargs):
         # 在执行被装饰的函数之前记录开始时间
         start = time.time()

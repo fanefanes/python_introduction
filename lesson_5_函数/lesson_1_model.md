@@ -1,9 +1,9 @@
 # 05：函数和模块
 
 在讲解本节课的内容之前，我们先来研究一道数学题，请说出下面的方程有多少组正整数解。
-\[
+$$
 x_1 + x_2 + x_3 + x_4 = 8
-\]
+$$
 
 你可能已经想到了，这个问题其实等同于将8个苹果分成四组且每组至少一个苹果有多少种方案，也等价于在分隔8个苹果的7个间隙之间放入三个隔断将苹果分成四组有多少种方案，所以答案是\( C_7^3=35 \)，其中，\( C_7^3 \)代表7选3的组合数，其计算公式如下所示。
 \[
@@ -88,8 +88,6 @@ print(fac(m) // fac(n) // fac(m - n))
 """
 输入m和n，计算组合数C(m,n)的值
 
-Version: 1.2
-Author: 骆昊
 """
 from math import factorial
 
@@ -104,8 +102,6 @@ print(factorial(m) // factorial(n) // factorial(m - n))
 """
 输入m和n，计算组合数C(m,n)的值
 
-Version: 1.3
-Author: 骆昊
 """
 from math import factorial as f
 
@@ -162,7 +158,6 @@ def make_judgement(*, a, b, c):
     """判断三条边的长度能否构成三角形"""
     return a + b > c and b + c > a and a + c > b
 
-
 # 下面的代码会产生TypeError错误，错误信息提示“函数没有位置参数但却给了3个位置参数”
 # TypeError: make_judgement() takes 0 positional arguments but 3 were given
 # print(make_judgement(1, 2, 3))
@@ -170,11 +165,10 @@ def make_judgement(*, a, b, c):
 
 ### 参数的默认值
 
-Python 中允许函数的参数拥有默认值，我们可以把之前讲过的一个例子“CRAPS赌博游戏”（《第07课：分支和循环结构的应用》）中摇色子获得点数的功能封装到函数中，代码如下所示。
+Python 中允许函数的参数拥有默认值，我们可以把之前讲过的一个例子“CRAPS赌博游戏”（《分支和循环结构的应用》）中摇色子获得点数的功能封装到函数中，代码如下所示。
 
 ```python
 from random import randrange
-
 
 # 定义摇色子的函数
 # 函数的自变量（参数）n表示色子的个数，默认值为2
@@ -231,7 +225,6 @@ def add(*args):
             total += val
     return total
 
-
 # 在调用add函数时可以传入0个或任意多个参数
 print(add())         # 0
 print(add(1))        # 1
@@ -272,7 +265,7 @@ def foo():
 def foo():
     print('goodbye, world!')
 
-foo()  # 大家猜猜调用foo函数会输出什么
+foo() # goodbye, world!
 ```
 
 当然上面的这种情况我们很容易就能避免，但是如果项目是团队协作多人开发的时候，团队中可能有多个程序员都定义了名为`foo`的函数，这种情况下怎么解决命名冲突呢？答案其实很简单，Python 中每个文件就代表了一个模块（module），我们在不同的模块中可以有同名的函数，在使用函数的时候，我们通过`import`关键字导入指定的模块再使用**完全限定名**（`模块名.函数名`）的调用方式，就可以区分到底要使用的是哪个模块中的`foo`函数，代码如下所示。

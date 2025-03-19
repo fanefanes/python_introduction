@@ -28,7 +28,7 @@ def generate_code(*, code_len=4):
 
 ```python
 for _ in range(5):
-    print(generate_code()) 
+    print(generate_code())
 ```
 
 输出：

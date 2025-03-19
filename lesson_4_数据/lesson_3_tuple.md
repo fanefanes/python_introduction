@@ -10,7 +10,7 @@
 # 定义一个三元组
 t1 = (35, 12, 98)
 # 定义一个四元组
-t2 = ('骆昊', 43, True, '四川成都')
+t2 = ('fantc', 43, True, '四川成都')
 
 # 查看变量的类型
 print(type(t1))  # <class 'tuple'>
@@ -26,8 +26,8 @@ print(t1[2])    # 98
 print(t2[-1])   # 四川成都
 
 # 切片运算
-print(t2[:2])   # ('骆昊', 43)
-print(t2[::3])  # ('骆昊', '四川成都')
+print(t2[:2])   # ('fantc', 43)
+print(t2[::3])  # ('fantc', '四川成都')
 
 # 循环遍历元组中的元素
 for elem in t1:
@@ -40,7 +40,7 @@ print('Hao' not in t2)  # False
 
 # 拼接运算
 t3 = t1 + t2
-print(t3)  # (35, 12, 98, '骆昊', 43, True, '四川成都')
+print(t3)  # (35, 12, 98, 'fantc', 43, True, '四川成都')
 
 # 比较运算
 print(t1 == t3)            # False
@@ -159,9 +159,9 @@ a, b, c = b, c, a
 当然，Python 中的元组和列表类型是可以相互转换的，我们可以通过下面的代码来完成该操作。
 
 ```python
-infos = ('骆昊', 43, True, '四川成都')
+infos = ('fantc', 43, True, '四川成都')
 # 将元组转换成列表
-print(list(infos))  # ['骆昊', 43, True, '四川成都']
+print(list(infos))  # ['fantc', 43, True, '四川成都']
 
 frts = ['apple', 'banana', 'orange']
 # 将列表转换成元组
