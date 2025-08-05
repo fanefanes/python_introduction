@@ -1,3 +1,3 @@
-# Python 学习指南
+# python Learning Guide
 
-一个系统化的Python学习与实战项目仓库，适合零基础入门。
+A systematic python learning and practical project repository, suitable for beginners with no prior knowledge.

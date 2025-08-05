@@ -128,7 +128,7 @@ print('%.1f华氏度 = %.1f摄氏度' % (f, c))
 """
 f = float(input('请输入华氏温度: '))
 c = (f - 32) / 1.8
-print(f'{f:.1f}华氏度 = {c:.1f}摄氏度')
+print(f'{f:.1f}华氏度 = {c:.1f}摄氏度')  # 37.8华氏度 = 1.1摄氏度
 ```
 
 ### 例子2：计算圆的周长和面积
@@ -143,8 +143,8 @@ print(f'{f:.1f}华氏度 = {c:.1f}摄氏度')
 radius = float(input('请输入圆的半径: '))
 perimeter = 2 * 3.1416 * radius
 area = 3.1416 * radius * radius
-print('周长: %.2f' % perimeter)
-print('面积: %.2f' % area)
+print('周长: %.2f' % perimeter)  # 周长: 34.56
+print('面积: %.2f' % area)      # 面积: 125.66
 ```
 
 Python 中有一个名为`math` 的内置模块，该模块中定义了名为`pi`的变量，它的值就是圆周率。如果要使用 Python 内置的这个`pi`，我们可以对上面的代码稍作修改。
@@ -159,8 +159,8 @@ import math
 radius = float(input('请输入圆的半径: '))
 perimeter = 2 * math.pi * radius
 area = math.pi * radius ** 2
-print(f'周长: {perimeter:.2f}')
-print(f'面积: {area:.2f}')
+print(f'周长: {perimeter:.2f}')  # 周长: 34.56
+print(f'面积: {area:.2f}')      # 面积: 125.66
 ```
 
 > **说明**：上面代码中的`import math`表示导入`math`模块，导入该模块以后，才能用`math.pi`得到圆周率的值。
@@ -194,7 +194,7 @@ print(f'{area = :.2f}')       # 输出：area = 95.03
 """
 year = int(input('请输入年份: '))
 is_leap = year % 4 == 0 and year % 100 != 0 or year % 400 == 0
-print(f'{is_leap = }')
+print(f'{is_leap = }')  # 输出：is_leap = False
 ```
 
 > **说明**：对于格里历（Gregorian calendar），即今天我们使用的公历，判断闰年的规则是：1. 公元年份非4的倍数是平年；2. 公元年份为4的倍数但非100的倍数是闰年；3. 公元年份为400的倍数是闰年。格里历是由教皇格里高利十三世在1582年10月引入的，作为对儒略历（Julian calendar）的修改和替代，我们在输入年份时要注意这一点。上面的代码通过`%`来判断`year`是不是`4`的倍数、`100`的倍数、`400`的倍数，然后用`and`和`or`运算符将三个条件组装在一起，前两个条件要同时满足，第三个条件跟前两个条件的组合只需满足其中之一。
